@@ -53,24 +53,25 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <form class="row g-3" action="">
+                        <form class="row g-3">
                             <div class="col-md-4">
                                 <label for="region" class="form-label">Región</label>
                                 <select id="region" name="region" class="form-select" required>
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
+                                    <option value="" selected disabled>Seleccione una opción</option>
+                                    <option value="option1">...</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
                                 <label for="comuna" class="form-label">Comuna</label>
                                 <select id="comuna" name="comuna" class="form-select" required>
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
+                                    <option value="" selected disabled>Seleccione una opción</option>
+                                    <option value="option1">...</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
                                 <label for="tipo" class="form-label">Tipo de pedido</label>
                                 <select id="tipo" name="tipo" class="form-select" required>
+                                    <option value="" selected disabled>Seleccione una opción</option>
                                     <option value="1">Fruta</option>
                                     <option value="2">Verdura</option>
                                     <option value="3">Otros</option>
@@ -110,7 +111,7 @@
             </div>
         </div>
     </section>
-    <script lang="javascript" src="./validator-agregar-pedido.js"></script>
+    <script lang="js" src="./validator-agregar-pedido.js"></script>
 </body>
 
 </html>
