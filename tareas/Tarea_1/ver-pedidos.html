@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar donación</title>
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png">
+    <link rel="stylesheet" href="ver-donaciones.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="container">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./inicio.html">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./agregar-donacion.html">Agregar
+                                Donación</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./agregar-pedido.html">Agregar Pedido</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./ver-donaciones.html">Ver Donaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./ver-pedidos.html">Ver Pedidos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="section">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mt-4 mb-4">
+                <h1>Aquí puedes ver los pedidos:</h1>
+            </div>
+        </div>
+        <div class="container text-center table-responsive">
+            <div class="row">
+                <div class="col">
+                    <table class="table table-striped table-hover table-bordered border-black">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Comuna</th>
+                                <th>Tipo</th>
+                                <th>Descripcion</th>
+                                <th>Cantidad</th>
+                                <th>Nombre solicitante</th>
+                                <th>Más info</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-light align-middle">
+                            <tr>
+                                <td>San Bernardo</td>
+                                <td>Fruta</td>
+                                <td>Tengo hambre</td>
+                                <td>4 unidades</td>
+                                <td>Cristian</td>
+                                <td><a href="./informacion-pedido.html" class="btn btn-outline-info">Ver más</a></td>
+                            </tr>
+                            <tr>
+                                <td>Calera de Tango</td>
+                                <td>Fruta</td>
+                                <td>Soy alergico a las paltas</td>
+                                <td>2 kilos</td>
+                                <td>Andrés</td>
+                                <td><a href="./informacion-pedido.html" class="btn btn-outline-info">Ver más</a></td>
+                            </tr>
+                            <tr>
+                                <td>Talagante</td>
+                                <td>Otros</td>
+                                <td>Vegetariano</td>
+                                <td>Mucho</td>
+                                <td>Francisca</td>
+                                <td><a href="./informacion-pedido.html" class="btn btn-outline-info">Ver más</a></td>
+                            </tr>
+                            <tr>
+                                <td>Peñaflor</td>
+                                <td>Fruta</td>
+                                <td>Tengo hambre</td>
+                                <td>1 kilo</td>
+                                <td>Diego</td>
+                                <td><a href="./informacion-pedido.html" class="btn btn-outline-info">Ver más</a></td>
+                            </tr>
+                            <tr>
+                                <td>Buin</td>
+                                <td>Verdura</td>
+                                <td>Acepto lo que sea</td>
+                                <td>3 unidades</td>
+                                <td>Jorge</td>
+                                <td><a href="./informacion-pedido.html" class="btn btn-outline-info">Ver más</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <a href="./inicio.html" class="btn btn-outline-danger">Volver a Inicio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script lang="js" src="./validator-agregar-donacion.js"></script>
+</body>
+
+</html>
