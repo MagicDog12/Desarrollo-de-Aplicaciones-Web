@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <link rel="shortcut icon" type="image/png" href="img/faviconPcPurple96.png">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <!-- Scripts para la resaltado de sintaxis con highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body class="container">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://cduran.cl/">cDuran.cl</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="https://cc5002.cduran.cl/">Desarrollo
+                                de
+                                Aplicaciones Web</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/tareas">Tareas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ejercicios">Ejercicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ejercicios/ejercicio_2/ejercicio_2.md" download
+                                type="text/x-generic">Código Fuente Markdown</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div>
+            <h1 class="code-line" data-line-start=0 data-line-end=1><a id="Ejercicio_2_0"></a>Ejercicio 2</h1>
+            <p class="has-line-data" data-line-start="2" data-line-end="3"><strong>Nombre</strong>: Cristian Durán</p>
+            <hr>
+            <h2 class="code-line" data-line-start=6 data-line-end=7><a id="Pregunta_1_6"></a>Pregunta 1</h2>
+            <p class="has-line-data" data-line-start="7" data-line-end="8">¿Por qué se prefiere enviar un formulario al
+                servidor usando el método POST que el método GET? Investigue. ¿En qué casos se puede usar GET?</p>
+            <p class="has-line-data" data-line-start="9" data-line-end="10"><strong>Respuesta</strong>:</p>
+            <p class="has-line-data" data-line-start="11" data-line-end="12">Se prefiere el uso del método POST para
+                enviar un formulario debido a las siguietes razones:</p>
+            <ol>
+                <li class="has-line-data" data-line-start="12" data-line-end="13">Es más seguro que el método GET ya que
+                    los datos no se muestran en la URL y por lo tanto no se pueden alterar fácilmente los datos
+                    enviados.</li>
+                <li class="has-line-data" data-line-start="13" data-line-end="14">Este método permite enviar una mayor
+                    cantidad de datos.</li>
+                <li class="has-line-data" data-line-start="14" data-line-end="16">Ayuda a prevenir la repetición
+                    accidental de envíos de formularios debido a que utiliza un toke CSRF que garantiza que cada
+                    solicitud eviada al servidor sea única y no pueda ser reutilizada.</li>
+            </ol>
+            <p class="has-line-data" data-line-start="16" data-line-end="17">El método GET es mejor usarlo cuando se
+                quiere solicitar datos y no modificarlos, cuando buscas información en un base de datos o se muestra
+                información estática.</p>
+            <h2 class="code-line" data-line-start=18 data-line-end=19><a id="Pregunta_2_18"></a>Pregunta 2</h2>
+            <p class="has-line-data" data-line-start="19" data-line-end="20">Existen variadas librerías y
+                <em>frameworks</em> de Javascript que se pueden utilizar para programar tareas más complejas en el
+                Frontend y manipular el DOM con mayor facilidad. Investigue, nombre y describa 3 de las librerías o
+                Frameworks de javascript más usados en el desarrollo web (por ejemplo, <strong>JQuery</strong>). Si
+                tuviese que implementar su página web ¿Cuál utilizaría?</p>
+            <p class="has-line-data" data-line-start="21" data-line-end="22"><strong>Respuesta</strong>:</p>
+            <p class="has-line-data" data-line-start="23" data-line-end="24">Las librerias que más me llamaron la
+                atención al investigar son las siguientes:</p>
+            <ol>
+                <li class="has-line-data" data-line-start="25" data-line-end="26">React: Desarrollado por Facebook,
+                    utiliza un enfoque basado en componentes para construir iterfaces de usuario interactivas y
+                    reutilizables, usa el DOM virtual que es más rápida y eficiente que la manipulación del DOM real, lo
+                    que ayuda a mejorar el rendimiento de la aplicación web.</li>
+                <li class="has-line-data" data-line-start="26" data-line-end="27">Angular: Desarrollado por Google, es
+                    una herramienta potente para construir aplicaciones web complejas y dinámicas. Tiene un enfoque
+                    basado en componentes, por lo que permite construir aplicaciones web escalables y fáciles de
+                    mantener.</li>
+                <li class="has-line-data" data-line-start="27" data-line-end="29">D3.js: Este Framework no lo había
+                    escuchado antes pero se ve muy útil, se usa para crear visualizaciones de datos complejas y
+                    dinámicas. Utiliza el poder de HTML, CSS, SVG para crear gráficos interactivos y animaciones de
+                    datos en tiempo real. Es muy flexible y personalizable.</li>
+            </ol>
+            <p class="has-line-data" data-line-start="29" data-line-end="30">Si tuviese que implementar mi página web
+                utilizaría React o Angular ya que se ven muy beneficiosos.</p>
+        </div>
+    </section>
+</body>
+
+</html>
