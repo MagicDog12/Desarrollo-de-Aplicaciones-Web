@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver pedidos</title>
-    <link rel="shortcut icon" type="image/png" href="./img/favicon.png">
-    <link rel="stylesheet" href="./app.css">
+    <title>Ver donaciones</title>
+    <link rel="shortcut icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/ver-donaciones.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
@@ -46,7 +46,7 @@
     <section class="section">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mt-4 mb-4">
-                <h1>Aquí puedes ver los pedidos:</h1>
+                <h1>Aquí puedes ver las donaciones:</h1>
             </div>
         </div>
         <div class="container text-center table-responsive">
@@ -57,9 +57,10 @@
                             <tr>
                                 <th>Comuna</th>
                                 <th>Tipo</th>
-                                <th>Descripcion</th>
                                 <th>Cantidad</th>
-                                <th>Nombre solicitante</th>
+                                <th>Fecha</th>
+                                <th>Nombre</th>
+                                <th>Foto</th>
                                 <th>Más info</th>
                             </tr>
                         </thead>
@@ -67,42 +68,47 @@
                             <tr>
                                 <td>San Bernardo</td>
                                 <td>Fruta</td>
-                                <td>Tengo hambre</td>
                                 <td>4 unidades</td>
+                                <td>Hoy</td>
                                 <td>Cristian</td>
-                                <td><a href="./informacion-pedido.html" class="btn btn-outline-info">Ver más</a></td>
+                                <td><img src="../img/naranja.png" alt="Naranja" class="foto"></td>
+                                <td><a href="./informacion-donacion.html" class="btn btn-outline-info">Ver más</a></td>
                             </tr>
                             <tr>
                                 <td>Calera de Tango</td>
                                 <td>Fruta</td>
-                                <td>Soy alergico a las paltas</td>
                                 <td>2 kilos</td>
+                                <td>Mañana</td>
                                 <td>Andrés</td>
-                                <td><a href="./informacion-pedido.html" class="btn btn-outline-info">Ver más</a></td>
+                                <td><img src="../img/palta.png" alt="palta" class="foto"></td>
+                                <td><a href="./informacion-donacion.html" class="btn btn-outline-info">Ver más</a></td>
                             </tr>
                             <tr>
                                 <td>Talagante</td>
                                 <td>Otros</td>
-                                <td>Vegetariano</td>
                                 <td>Mucho</td>
+                                <td>10/04/2023</td>
                                 <td>Francisca</td>
-                                <td><a href="./informacion-pedido.html" class="btn btn-outline-info">Ver más</a></td>
+                                <td><img src="../img/favicon.png" alt="girasol" class="foto"></td>
+                                <td><a href="./informacion-donacion.html" class="btn btn-outline-info">Ver más</a></td>
                             </tr>
                             <tr>
                                 <td>Peñaflor</td>
                                 <td>Fruta</td>
-                                <td>Tengo hambre</td>
                                 <td>1 kilo</td>
+                                <td>23/04/2023</td>
                                 <td>Diego</td>
-                                <td><a href="./informacion-pedido.html" class="btn btn-outline-info">Ver más</a></td>
+                                <td><img src="../img/arandanos.png" alt="arandanos" class="foto"></td>
+                                <td><a href="./informacion-donacion.html" class="btn btn-outline-info">Ver más</a></td>
                             </tr>
                             <tr>
                                 <td>Buin</td>
                                 <td>Verdura</td>
-                                <td>Acepto lo que sea</td>
                                 <td>3 unidades</td>
+                                <td>15/04/2023</td>
                                 <td>Jorge</td>
-                                <td><a href="./informacion-pedido.html" class="btn btn-outline-info">Ver más</a></td>
+                                <td><img src="../img/dona.png" alt="piña" class="foto"></td>
+                                <td><a href="./informacion-donacion.html" class="btn btn-outline-info">Ver más</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -115,7 +121,7 @@
             </div>
         </div>
     </section>
-    <script lang="js" src="./validator-agregar-donacion.js"></script>
+    <script lang="js" src=""></script>
 </body>
 
 </html>
