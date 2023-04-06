@@ -6,8 +6,9 @@ const validarForm = () => {
     const emailExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const celularExp = /^$|^[0-9]{10}$/;
     // Funciones auxiliares
-    const validadorObligatorio = (opcion) => opcion;
+    const validadorSelect = (opcion) => opcion!=-1;
     const validadorDescripcion = (descripcion) => descripcion && descripcion.length <=250;
+    const validadorCantidad = (cantidad) => cantidad;
     const validadorNombre = (nombre) => nombre && nombre.length >= 3 && nombre.length <= 80;
     const validadorEmail = (email) => email && emailExp.test(email);
     const validadorCelular = (celular) => celularExp.test(celular);
@@ -28,21 +29,21 @@ const validarForm = () => {
     let isValid = false;
     let msg = "";
 
-    if (!validadorObligatorio(regionInput.value)) {
+    if (!validadorSelect(regionInput.value)) {
         msg += "Region mala!\n";
         regionInput.style.borderColor = "red"; // Cambiar estilo con JS!!
     } else {
         regionInput.style.borderColor = "";
     }
 
-    if (!validadorObligatorio(comunaInput.value)) {
+    if (!validadorSelect(comunaInput.value)) {
         msg += "Comuna mala!\n";
         comunaInput.style.borderColor = "red"; // Cambiar estilo con JS!!
     } else {
         comunaInput.style.borderColor = "";
     }
 
-    if (!validadorObligatorio(tipoInput.value)) {
+    if (!validadorSelect(tipoInput.value)) {
         msg += "Tipo malo!\n";
         tipoInput.style.borderColor = "red"; // Cambiar estilo con JS!!
     } else {
@@ -56,7 +57,7 @@ const validarForm = () => {
         descripcionInput.style.borderColor = "";
     }
 
-    if (!validadorObligatorio(cantidadInput.value)) {
+    if (!validadorCantidad(cantidadInput.value)) {
         msg += "Cantidad mala!\n";
         cantidadInput.style.borderColor = "red"; // Cambiar estilo con JS!!
     } else {
