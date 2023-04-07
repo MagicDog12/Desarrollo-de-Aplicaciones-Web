@@ -57,15 +57,13 @@
                             <div class="col-md-3">
                                 <label for="region" class="form-label">Región</label>
                                 <select id="region" name="region" class="form-select" required>
-                                    <option value="" selected disabled>Seleccione una opción</option>
-                                    <option value="option1">...</option>
+                                    <option value="-1" selected disabled>Seleccione una opción</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
                                 <label for="comuna" class="form-label">Comuna</label>
                                 <select id="comuna" name="comuna" class="form-select" required>
-                                    <option value="" selected disabled>Seleccione una opción</option>
-                                    <option value="option1">...</option>
+                                    <option value="-1" selected disabled>Seleccione una opción</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -76,10 +74,10 @@
                             <div class="col-md-3">
                                 <label for="tipo" class="form-label">Tipo de donación</label>
                                 <select id="tipo" name="tipo" class="form-select" required>
-                                    <option value="" selected disabled>Seleccione una opción</option>
-                                    <option value="1">Fruta</option>
-                                    <option value="2">Verdura</option>
-                                    <option value="3">Otros</option>
+                                    <option value="-1" selected disabled>Seleccione una opción</option>
+                                    <option value="fruta">Fruta</option>
+                                    <option value="verdura">Verdura</option>
+                                    <option value="otro">Otro</option>
                                 </select>
                             </div>
                             <div class="col-md-5">
@@ -122,7 +120,7 @@
                                     placeholder="+569 1234 5678" maxlength="15">
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-outline-success">Agregar donación</button>
+                                <button type="button" id="envio" class="btn btn-outline-success">Agregar donación</button>
                             </div>
                         </form>
                     </div>
@@ -131,6 +129,7 @@
         </div>
     </section>
     <script lang="js" src="../js/validator-agregar-donacion.js"></script>
+    <script lang="js" src="../js/selectRegionComuna.js"></script>
 </body>
 
 </html>
