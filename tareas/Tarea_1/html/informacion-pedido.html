@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacion Donación</title>
+    <link rel="shortcut icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/info-donacion.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="container">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./inicio.html">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./agregar-donacion.html">Agregar
+                                Donación</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./agregar-pedido.html">Agregar Pedido</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./ver-donaciones.html">Ver Donaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./ver-pedidos.html">Ver Pedidos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="section">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mt-4 mb-4">
+                <h1>Información de la donación:</h1>
+            </div>
+        </div>
+        <div class="container text-center table-responsive">
+            <div class="row">
+                <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-expanded="false">Atajos</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#scrollspyHeading1">Region</a></li>
+                                <li><a class="dropdown-item" href="#scrollspyHeading2">Comuna</a></li>
+                                <li><a class="dropdown-item" href="#scrollspyHeading3">Tipo de pedido</a></li>
+                                <li><a class="dropdown-item" href="#scrollspyHeading4">Descripción de pedido</a></li>
+                                <li><a class="dropdown-item" href="#scrollspyHeading5">Cantidad</a></li>
+                                <li><a class="dropdown-item" href="#scrollspyHeading6">Nombre del solicitante</a></li>
+                                <li><a class="dropdown-item" href="#scrollspyHeading7">Email del solicitante</a></li>
+                                <li><a class="dropdown-item" href="#scrollspyHeading8">Número celular del
+                                        solicitante</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+                    data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+                    <div id="scrollspyHeading1" class="mb-3 text-start">
+                        <h3 class="d-inline">Region:</h3>
+                        <p class="d-inline fs-4"> Ñuble</p>
+                    </div>
+                    <div id="scrollspyHeading2" class="mb-3 text-start">
+                        <h3 class="d-inline">Comuna:</h3>
+                        <p class="d-inline fs-4">Yungay</p>
+                    </div>
+                    <div id="scrollspyHeading3" class=" mb-3 text-start">
+                        <h3 class="d-inline">Tipo de pedido:</h3>
+                        <p class="d-inline fs-4">Verduras</p>
+                    </div>
+                    <div id="scrollspyHeading4" class="mb-3 text-start">
+                        <h3 class="d-inline">Descripción de pedido:</h3>
+                        <p class="d-inline fs-4">La zanahoria es una hortaliza alargada y cónica, con una piel lisa y
+                            delgada que puede ser de diferentes tonalidades de naranja, amarillo o blanco. Su interior
+                            es de color naranja brillante y tiene una textura crujiente y jugosa.
+
+                            Las zanahorias son ricas en nutrientes importantes para la salud, como la vitamina A, la
+                            vitamina K y la fibra dietética. También contienen otros nutrientes beneficiosos como la
+                            vitamina C, el potasio y el ácido fólico.
+
+                            Las zanahorias se pueden consumir crudas o cocidas, y son una adición popular a las
+                            ensaladas, guisos y sopas. Además, se utilizan a menudo como ingrediente en jugos y batidos
+                            de vegetales debido a sus propiedades nutricionales.</p>
+                    </div>
+                    <div id="scrollspyHeading5" class="mb-3 text-start">
+                        <h3 class="d-inline">Cantidad:</h3>
+                        <p class="d-inline fs-4">3 kilos</p>
+                    </div>
+                    <div id="scrollspyHeading6" class="mb-3 text-start">
+                        <h3 class="d-inline">Nombre del solicitante:</h3>
+                        <p class="d-inline fs-4">Cristian Durán</p>
+                    </div>
+                    <div id="scrollspyHeading7" class="mb-3 text-start">
+                        <h3 class="d-inline">Email del solicitante:</h3>
+                        <p class="d-inline fs-4">example@gmail.com</p>
+                    </div>
+                    <div id="scrollspyHeading8" class="mb-3 text-start">
+                        <h3 class="d-inline">Número celular del solicitante:</h3>
+                        <p class="d-inline fs-4">+56912312345</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <a href="./ver-pedidos.html" class="btn btn-outline-danger">Volver al listado de pedidos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script lang="js" src="../js/cambiarRuta.js"></script>
+</body>
+
+</html>
