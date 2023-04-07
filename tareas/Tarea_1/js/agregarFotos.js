@@ -1,0 +1,31 @@
+let numFotos = 2;
+
+const agregarFoto = () => {
+    if (numFotos < 4) {
+        // Agregamos el input
+        const input = document.createElement("input");
+        input.type = "file";
+        input.name = "foto-" + numFotos;
+        input.id = "foto-" + numFotos;
+
+        // Agregamos el label
+        const label = document.createElement("label");
+        label.classList.add("input-group-text");
+        label.setAttribute("for", input.id);
+        label.textContent = "Agregar foto qla";
+
+        // Agregamos el div
+        const div = document.createElement("div");
+        div.classList.add("input-group");
+        div.classList.add("col-md-12");
+        div.id = "foto-div-" + numFotos;
+
+        const refElement = document.querySelector("#foto-div-1");
+        refElement.parentNode.insertBefore(div, refElement.nextElementSibling);
+        document.querySelector("#foto-div-" + numFotos).appendChild(label);
+        document.querySelector("#foto-div-" + numFotos).appendChild(input);
+        numFotos++;
+    } else {
+        alert("Solo se permiten subir hasta 3 fotos");
+    }
+}

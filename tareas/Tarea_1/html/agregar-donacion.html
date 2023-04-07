@@ -100,10 +100,12 @@
                                 <input type="text" class="form-control" id="condiciones" name="condiciones"
                                     placeholder="Trae guantes" maxlength="80">
                             </div>
-                            <div class="input-group col-md-12">
+                            <div class="input-group col-md-12" id="foto-div-1">
                                 <label class="input-group-text" for="foto-1">Foto Donación</label>
-                                <input type="file" class="form-control" id="foto-1" name="foto-1" required>
+                                <input type="file" class="form-control" id="foto-1" name="foto" required>
+                                <button type="button" class="btn btn-outline-secondary" onclick="agregarFoto()">Agregar otra foto</button>
                             </div>
+                            <div class=""></div>
                             <div class="col-md-6">
                                 <label for="nombre" class="form-label">Nombre del donante</label>
                                 <input type="text" class="form-control" id="nombre" name="nombre"
@@ -130,6 +132,7 @@
     </section>
     <script lang="js" src="../js/validator-agregar-donacion.js"></script>
     <script lang="js" src="../js/selectRegionComuna.js"></script>
+    <script lang="js" src="../js/agregarFotos.js"></script>
 </body>
 
 </html>
