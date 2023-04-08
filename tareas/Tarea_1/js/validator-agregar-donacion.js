@@ -38,7 +38,6 @@ const validarForm = () => {
   let emailInput = document.getElementById("email");
   let celularInput = document.getElementById("celular");
 
-  let isValid = false;
   let msg = "";
 
   if (!validadorSelect(regionInput.value)) {
@@ -115,22 +114,52 @@ const validarForm = () => {
       celularInput.style.borderColor = "";
   }
 
-  if(msg === "") {
-      msg = "Felicitaciones, tu formulario ha sido enviado";
-      isValid = true;
-      // form.submit();
+  const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
 
-      // No contamos con un backend, asi que de momento
-      // utilizaremos el localStorage para dar la 
-      // sensacion de que hemos enviado el formulario.
-      let nombre = nombreInput.value;
-      localStorage.setItem("nombre", nombre);
-  }
-  alert(msg); // Alertas de JS
+    const regresar = () => {
+        window.location.href = "./inicio.html";
+    }
 
-  if (isValid) {
-      window.location.href = "./inicio.html";
-  }
+    const ir = () => {
+        alertPlaceholder.innerHTML = [
+            `<div class="alert alert-success alert-dismissible" role="alert">`,
+            `   <div>Hemos recibido la información de su donación. Muchas gracias.</div>`,
+            '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+            '</div>'
+            ].join('');
+            const finalBtn = document.getElementById("envio");
+            finalBtn.classList.remove('btn-outline-success');
+            finalBtn.classList.add('btn-outline-info')
+            finalBtn.innerText = "Volver a la portada";
+            finalBtn.addEventListener("click", regresar);
+    };
+    const appendAlert = (message, type, dismissible) => {
+        if(dismissible){
+            alertPlaceholder.innerHTML = [
+                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                `   <div>${message}</div>`,
+                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+              ].join('');
+        } else {
+            alertPlaceholder.innerHTML = [
+                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                `   <div>${message}</div>`,
+                '   <button id="confirmacion" type="button" class="btn btn-success mb-3">Sí, confirmo</button>',
+                '   <button type="button" class="btn btn-danger mb-3" data-bs-dismiss="alert">No, quiero volver al formulario</button>',
+                '</div>'
+              ].join('');
+              let confirmBtn = document.getElementById("confirmacion");
+              confirmBtn.addEventListener("click", ir);
+        }
+    }
+
+    if(msg === "") {
+        msg = "¿Confirma que desea agregar esta donación?";
+        appendAlert(msg, 'success', false);
+    } else {
+        appendAlert(msg, 'danger', true);
+    }
 };
 
 // Recuperamos el boton que envia el formulario
