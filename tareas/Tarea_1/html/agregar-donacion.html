@@ -100,12 +100,13 @@
                                 <input type="text" class="form-control" id="condiciones" name="condiciones"
                                     placeholder="Trae guantes" maxlength="80">
                             </div>
-                            <div class="input-group col-md-12" id="foto-div-1">
-                                <label class="input-group-text" for="foto-1">Foto Donación</label>
-                                <input type="file" class="form-control" id="foto-1" name="foto" required>
+                            <div class="col-md-6">
                                 <button type="button" class="btn btn-outline-secondary" onclick="agregarFoto()">Agregar otra foto</button>
                             </div>
-                            <div class=""></div>
+                            <div class="input-group col-md-12" id="foto-div-1">
+                                <label class="input-group-text" for="foto-1">Foto Donación</label>
+                                <input type="file" class="form-control" id="foto-1" name="foto-1" required>
+                            </div>
                             <div class="col-md-6">
                                 <label for="nombre" class="form-label">Nombre del donante</label>
                                 <input type="text" class="form-control" id="nombre" name="nombre"
@@ -122,7 +123,8 @@
                                     placeholder="+569 1234 5678" maxlength="15">
                             </div>
                             <div class="col-md-12">
-                                <button type="button" id="envio" class="btn btn-outline-success">Agregar donación</button>
+                                <button type="button" id="envio" class="btn btn-outline-success">Agregar
+                                    donación</button>
                             </div>
                         </form>
                     </div>

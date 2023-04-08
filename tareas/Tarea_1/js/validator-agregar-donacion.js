@@ -5,8 +5,6 @@ const validarForm = () => {
   // Fecha actual
   const fechaActual = new Date().toISOString().slice(0,10);
 
-  // Fotos
-
   // Expresiones regulares
   const emailExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const celularExp = /^$|^[0-9]{10}$/;
@@ -17,7 +15,10 @@ const validarForm = () => {
   const validadorCalleNumero = (direccion) => direccion;
   const validadorCantidad = (cantidad) => cantidad;
   const validadorFecha = (fecha) => fecha >= fechaActual && formatoFecha.test(fecha);
-  const validadorFoto = (foto) => foto; // MODIFICAR Mínimo 1, máximo 3.
+  const validadorFoto = (fotos) => {
+    const numFotos = fotos.filter(foto => foto.files.length > 0).length;
+    return numFotos >= 1 && numFotos <= 3;
+  }; // MODIFICAR Mínimo 1, máximo 3.
   const validadorNombre = (nombre) => nombre && nombre.length >= 3 && nombre.length <= 80;
   const validadorEmail = (email) => email && emailExp.test(email);
   const validadorCelular = (celular) => celularExp.test(celular);
@@ -32,7 +33,7 @@ const validarForm = () => {
   let tipoInput = document.getElementById("tipo");
   let cantidadInput = document.getElementById("cantidad");
   let fechaInput = document.getElementById("fecha-disponibilidad");
-  let fotoInput = document.getElementById("foto-1");
+  const fotosInput = [...document.querySelectorAll('input[name^="foto-"]')];
   let nombreInput = document.getElementById("nombre");
   let emailInput = document.getElementById("email");
   let celularInput = document.getElementById("celular");
@@ -82,11 +83,15 @@ const validarForm = () => {
     fechaInput.style.borderColor = "";
   }
 
-  if (!validadorFoto(fotoInput.value)) {
+  if (!validadorFoto(fotosInput)) {
     msg += "Foto mala!\n";
-    fotoInput.style.borderColor = "red"; // Cambiar estilo con JS!!
+    fotosInput.forEach(foto => {
+        foto.style.borderColor = "red";
+    });
   } else {
-    fotoInput.style.borderColor = "";
+    fotosInput.forEach(foto => {
+        foto.style.borderColor = "";
+    });
   }
 
   if (!validadorNombre(nombreInput.value)) {
