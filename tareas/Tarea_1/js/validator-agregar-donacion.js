@@ -11,7 +11,7 @@ const validarForm = () => {
   const formatoFecha = /^\d{4}-\d{2}-\d{2}$/;
 
   // Funciones auxiliares
-  const validadorSelect = (opcion) => opcion!=-1;
+  const validadorSelect = (opcion) => opcion;
   const validadorCalleNumero = (direccion) => direccion;
   const validadorCantidad = (cantidad) => cantidad;
   const validadorFecha = (fecha) => fecha >= fechaActual && formatoFecha.test(fecha);

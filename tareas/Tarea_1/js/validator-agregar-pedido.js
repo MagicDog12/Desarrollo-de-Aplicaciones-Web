@@ -6,7 +6,7 @@ const validarForm = () => {
     const emailExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const celularExp = /^$|^[0-9]{10}$/;
     // Funciones auxiliares
-    const validadorSelect = (opcion) => opcion!=-1;
+    const validadorSelect = (opcion) => opcion;
     const validadorDescripcion = (descripcion) => descripcion && descripcion.length <=250;
     const validadorCantidad = (cantidad) => cantidad;
     const validadorNombre = (nombre) => nombre && nombre.length >= 3 && nombre.length <= 80;
