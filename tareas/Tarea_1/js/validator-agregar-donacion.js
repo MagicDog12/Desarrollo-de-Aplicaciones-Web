@@ -7,7 +7,7 @@ const validarForm = () => {
 
   // Expresiones regulares
   const emailExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const celularExp = /^$|^[0-9]{10}$/;
+  const celularExp = /^$|^9\d{8}$/;
   const formatoFecha = /^\d{4}-\d{2}-\d{2}$/;
 
   // Funciones auxiliares
@@ -41,49 +41,49 @@ const validarForm = () => {
   let msg = "";
 
   if (!validadorSelect(regionInput.value)) {
-      msg += "Region mala!\n";
+      msg += "Selecciona una región<br>";
       regionInput.style.borderColor = "red"; // Cambiar estilo con JS!!
   } else {
       regionInput.style.borderColor = "";
   }
 
   if (!validadorSelect(comunaInput.value)) {
-      msg += "Comuna mala!\n";
+      msg += "Selecciona una comuna <br>";
       comunaInput.style.borderColor = "red"; // Cambiar estilo con JS!!
   } else {
       comunaInput.style.borderColor = "";
   }
 
   if (!validadorCalleNumero(calleNumeroInput.value)) {
-    msg += "Calle y número malo!\n";
+    msg += "Ingresa una calle y número <br>";
     calleNumeroInput.style.borderColor = "red"; // Cambiar estilo con JS!!
   } else {
     calleNumeroInput.style.borderColor = "";
   }
 
   if (!validadorSelect(tipoInput.value)) {
-      msg += "Tipo malo!\n";
+      msg += "Selecciona un tipo <br>";
       tipoInput.style.borderColor = "red"; // Cambiar estilo con JS!!
   } else {
       tipoInput.style.borderColor = "";
   }
 
   if (!validadorCantidad(cantidadInput.value)) {
-      msg += "Cantidad mala!\n";
+      msg += "Ingresa una cantidad <br>";
       cantidadInput.style.borderColor = "red"; // Cambiar estilo con JS!!
   } else {
       cantidadInput.style.borderColor = "";
   }
 
   if (!validadorFecha(fechaInput.value)) {
-    msg += "Fecha mala!\n";
+    msg += "Ingresa una fecha en formato año-mes-día que sea mayor o igual a la fecha actual <br>";
     fechaInput.style.borderColor = "red"; // Cambiar estilo con JS!!
   } else {
     fechaInput.style.borderColor = "";
   }
 
   if (!validadorFoto(fotosInput)) {
-    msg += "Foto mala!\n";
+    msg += "Ingresa al menos 1 foto y máximo 3 fotos <br>";
     fotosInput.forEach(foto => {
         foto.style.borderColor = "red";
     });
@@ -94,21 +94,21 @@ const validarForm = () => {
   }
 
   if (!validadorNombre(nombreInput.value)) {
-      msg += "Nombre malo!\n";
+      msg += "Ingresa el nombre del donante, mínimo 3 carácteres y máximo 80 <br>";
       nombreInput.style.borderColor = "red"; // Cambiar estilo con JS!!
   } else {
       nombreInput.style.borderColor = "";
   }
 
   if (!validadorEmail(emailInput.value)) {
-      msg += "Email malo!\n";
+      msg += "Ingresa una dirección de correo válida en formato abc@def.ghi <br>";
       emailInput.style.borderColor = "red"; // Cambiar estilo con JS!!
   } else {
       emailInput.style.borderColor = "";
   }
 
   if (!validadorCelular(celularInput.value)) {
-      msg += "Celular malo!\n";
+      msg += "Ingresa un número de celular válido en formato 912345678 (recuerda que comienza con 9) <br>";
       celularInput.style.borderColor = "red"; // Cambiar estilo con JS!!
   } else {
       celularInput.style.borderColor = "";

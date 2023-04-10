@@ -5,6 +5,7 @@ const agregarFoto = () => {
         // Agregamos el input
         const input = document.createElement("input");
         input.classList.add("form-control");
+        input.addEventListener("click", agregarFoto);
         input.type = "file";
         input.name = "foto-" + numFotos;
         input.id = "foto-" + numFotos;
@@ -26,7 +27,5 @@ const agregarFoto = () => {
         document.querySelector("#foto-div-" + numFotos).appendChild(label);
         document.querySelector("#foto-div-" + numFotos).appendChild(input);
         numFotos++;
-    } else {
-        alert("Solo se permiten subir hasta 3 fotos");
     }
 }

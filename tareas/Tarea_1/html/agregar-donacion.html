@@ -68,8 +68,8 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="calle-numero" class="form-label">Calle y número</label>
-                                <input type="text" class="form-control" id="calle-numero" name="calle-numero"
-                                    placeholder="Beauchef 850" maxlength="80" required>
+                                <textarea class="form-control" id="calle-numero" name="calle-numero"
+                                    placeholder="Beauchef 850" maxlength="80" rows="2" required></textarea>
                             </div>
                             <div class="col-md-3">
                                 <label for="tipo" class="form-label">Tipo de donación</label>
@@ -82,45 +82,42 @@
                             </div>
                             <div class="col-md-5">
                                 <label for="cantidad" class="form-label">Cantidad</label>
-                                <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder=""
-                                    maxlength="10" required>
+                                <textarea class="form-control" id="cantidad" name="cantidad" placeholder=""
+                                    maxlength="10" rows="1" required></textarea>
                             </div>
                             <div class="col-md-4">
                                 <label for="fecha-disponibilidad" class="form-label">Fecha de disponibilidad</label>
-                                <input type="date" class="form-control" id="fecha-disponibilidad"
-                                    name="fecha-disponibilidad" required>
+                                <textarea class="form-control" id="fecha-disponibilidad"
+                                    name="fecha-disponibilidad" placeholder="año-mes-día" rows="1" required></textarea>
                             </div>
                             <div class="col-md-6">
                                 <label for="descripcion" class="form-label">Descripción</label>
-                                <input type="text" class="form-control" id="descripcion" name="descripcion"
-                                    placeholder="Las naranjas vienen jugosas" maxlength="80">
+                                <textarea class="form-control" id="descripcion" name="descripcion"
+                                    placeholder="Las naranjas vienen jugosas" maxlength="80" rows="3"></textarea>
                             </div>
                             <div class="col-md-6">
                                 <label for="condiciones" class="form-label">Condiciones para retirar</label>
-                                <input type="text" class="form-control" id="condiciones" name="condiciones"
-                                    placeholder="Trae guantes" maxlength="80">
-                            </div>
-                            <div class="col-md-6">
-                                <button type="button" class="btn btn-outline-secondary" onclick="agregarFoto()">Agregar otra foto</button>
+                                <textarea class="form-control" id="condiciones" name="condiciones"
+                                    placeholder="Trae guantes" maxlength="80" rows="3"></textarea>
                             </div>
                             <div class="input-group col-md-12" id="foto-div-1">
                                 <label class="input-group-text" for="foto-1">Foto Donación</label>
-                                <input type="file" class="form-control" id="foto-1" name="foto-1" required>
+                                <input type="file" class="form-control" id="foto-1" name="foto-1" required onclick="agregarFoto()">
                             </div>
                             <div class="col-md-6">
                                 <label for="nombre" class="form-label">Nombre del donante</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre"
-                                    placeholder="Juan Perez" minlength="3" maxlength="80" required>
+                                <textarea class="form-control" id="nombre" name="nombre"
+                                    placeholder="Juan Perez" minlength="3" maxlength="80" rows="1" required></textarea>
                             </div>
                             <div class="col-md-6">
                                 <label for="email" class="form-label">Email de contacto</label>
-                                <input type="text" class="form-control" id="email" name="email"
-                                    placeholder="juan@gmail.com" maxlength="30" required>
+                                <textarea class="form-control" id="email" name="email"
+                                    placeholder="juan@gmail.com" maxlength="30" rows="1" required></textarea>
                             </div>
                             <div class="col-md-6">
                                 <label for="celular" class="form-label">Número de celular del contacto</label>
-                                <input type="text" class="form-control" id="celular" name="celular"
-                                    placeholder="+569 1234 5678" maxlength="15">
+                                <textarea class="form-control" id="celular" name="celular"
+                                    placeholder="+569 1234 5678" maxlength="15" rows="1"></textarea>
                             </div>
                             <div class="col-md-12">
                                 <button type="button" id="envio" class="btn btn-outline-success">Agregar
