@@ -1,11 +1,11 @@
-from flask import Flask, request
+from flask import Flask, render_template, request
 from markupsafe import escape
 
 app = Flask(__name__)
 
 @app.route("/")
 def inicio():
-    return "<h1> Inicio.html </h1>"
+    return render_template("inicio.html")
     
 @app.route("/agregar-donacion", methods=['GET', 'POST'])
 def agregar_donacion():
