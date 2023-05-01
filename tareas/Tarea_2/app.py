@@ -29,7 +29,7 @@ def informacion_donacion():
 
 @app.route("/informacion-pedido")
 def informacion_pedido():
-    return "<h1> Informacion-pedido.html </h1>"
+    return render_template("informacion-pedido.html")
 
 # @app.route('/login', methods=['GET', 'POST'])
 # def login():
