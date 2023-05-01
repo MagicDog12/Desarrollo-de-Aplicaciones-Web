@@ -9,7 +9,7 @@ def inicio():
     
 @app.route("/agregar-donacion", methods=['GET', 'POST'])
 def agregar_donacion():
-    return "<h1> Agregar-donacion.html </h1>"
+    return render_template("agregar-donacion.html")
 
 @app.route("/agregar-pedido", methods=['GET', 'POST'])
 def agregar_pedido():
