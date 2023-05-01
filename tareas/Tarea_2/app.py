@@ -13,7 +13,7 @@ def agregar_donacion():
 
 @app.route("/agregar-pedido", methods=['GET', 'POST'])
 def agregar_pedido():
-    return "<h1> Agregar-pedido.html </h1>"
+    return render_template("agregar-pedido.html")
 
 @app.route("/ver-donaciones")
 def ver_donaciones():
