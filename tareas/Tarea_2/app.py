@@ -17,7 +17,7 @@ def agregar_pedido():
 
 @app.route("/ver-donaciones")
 def ver_donaciones():
-    return "<h1> Ver-donaciones.html </h1>"
+    return render_template("ver-donaciones.html")
 
 @app.route("/ver-pedidos")
 def ver_pedidos():
