@@ -2,7 +2,6 @@ from flask import Flask, render_template
 # Creamos una instancia de Flask en el módulo actual
 app = Flask(__name__)
 
-
 # Definimos una ruta para la URL principal y devolvemos el contenido de 'inicio.html'
 @app.route("/")
 def inicio():
