@@ -21,7 +21,7 @@ def ver_donaciones():
 
 @app.route("/ver-pedidos")
 def ver_pedidos():
-    return "<h1> Ver-pedidos.html </h1>"
+    return render_template("ver-pedidos.html")
 
 @app.route("/informacion-donacion")
 def informacion_donacion():
