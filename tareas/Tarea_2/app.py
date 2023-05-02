@@ -31,6 +31,12 @@ def informacion_donacion():
 def informacion_pedido():
     return render_template("informacion-pedido.html")
 
+# Definir la función de manejo de errores 404
+@app.errorhandler(404)
+def pagina_no_encontrada(error):
+    return render_template('404.html'), 404
+
+
 # @app.route('/login', methods=['GET', 'POST'])
 # def login():
     if request.method == 'POST':
