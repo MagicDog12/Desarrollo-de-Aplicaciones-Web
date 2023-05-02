@@ -1,7 +1,7 @@
 let selectRegiones = document.getElementById("region");
 let selectComunas = document.getElementById("comuna");
 
-fetch("../otros/region_comuna.json")
+fetch("../static/otros/region_comuna.json")
     .then(Response => Response.json())
     .then(contenido => {
 
