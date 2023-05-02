@@ -1,117 +1,85 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar pedido</title>
-    <link rel="shortcut icon" type="image/png" href="../img/favicon.png">
-    <link rel="stylesheet" href="../css/app.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+{% block title %}
+Agregar pedido
+{% endblock %}
 
-</head>
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+{% endblock %}
 
-<body class="container">
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="./inicio.html">Inicio</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./agregar-donacion.html">Agregar
-                                Donación</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./agregar-pedido.html">Agregar Pedido</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./ver-donaciones.html">Ver Donaciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./ver-pedidos.html">Ver Pedidos</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <section class="section">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center mt-4 mb-4">
-                <h1>Por favor, solicita tu pedido aquí:</h1>
-            </div>
+{% block content %}
+<section class="section">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center mt-4 mb-4">
+            <h1>Por favor, solicita tu pedido aquí:</h1>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <form id="formulario" class="row g-3">
-                            <div class="col-md-4">
-                                <label for="region" class="form-label">Región</label>
-                                <select id="region" name="region" class="form-select" required>
-                                    <option value="" selected disabled>Seleccione una opción</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="comuna" class="form-label">Comuna</label>
-                                <select id="comuna" name="comuna" class="form-select" required>
-                                    <option value="" selected disabled>Seleccione una opción</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="tipo" class="form-label">Tipo de pedido</label>
-                                <select id="tipo" name="tipo" class="form-select" required>
-                                    <option value="" selected disabled>Seleccione una opción</option>
-                                    <option value="fruta">Fruta</option>
-                                    <option value="verdura">Verdura</option>
-                                    <option value="otro">Otro</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="descripcion" class="form-label">Descripción</label>
-                                <textarea class="form-control" id="descripcion" name="descripcion"
-                                    placeholder="Las naranjas las quiero jugosas" maxlength="80" rows="3" required></textarea>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="cantidad" class="form-label">Cantidad</label>
-                                <textarea class="form-control" id="cantidad" name="cantidad" placeholder=""
-                                    maxlength="10" rows="3" required></textarea>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="nombre" class="form-label">Nombre del solicitante</label>
-                                <textarea class="form-control" id="nombre" name="nombre"
-                                    placeholder="Juan Perez" minlength="3" maxlength="80" rows="1" required></textarea>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Email de contacto</label>
-                                <textarea class="form-control" id="email" name="email"
-                                    placeholder="juan@gmail.com" maxlength="30" rows="1" required></textarea>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="celular" class="form-label">Número de celular del contacto</label>
-                                <textarea class="form-control" id="celular" name="celular"
-                                    placeholder="+569 1234 5678" maxlength="15" rows="1"></textarea>
-                            </div>
-                            <div class="col-md-12">
-                                <button type="button" id="envio" class="btn btn-outline-success">Agregar pedido</button>
-                            </div>
-                            <div id="liveAlertPlaceholder" class="col-md-12"></div>
-                        </form>
-                    </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form id="formulario" class="row g-3">
+                        <div class="col-md-4">
+                            <label for="region" class="form-label">Región</label>
+                            <select id="region" name="region" class="form-select" required>
+                                <option value="" selected disabled>Seleccione una opción</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="comuna" class="form-label">Comuna</label>
+                            <select id="comuna" name="comuna" class="form-select" required>
+                                <option value="" selected disabled>Seleccione una opción</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="tipo" class="form-label">Tipo de pedido</label>
+                            <select id="tipo" name="tipo" class="form-select" required>
+                                <option value="" selected disabled>Seleccione una opción</option>
+                                <option value="fruta">Fruta</option>
+                                <option value="verdura">Verdura</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="descripcion" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcion" name="descripcion"
+                                placeholder="Las naranjas las quiero jugosas" maxlength="80" rows="3"
+                                required></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cantidad" class="form-label">Cantidad</label>
+                            <textarea class="form-control" id="cantidad" name="cantidad" placeholder="" maxlength="10"
+                                rows="3" required></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre del solicitante</label>
+                            <textarea class="form-control" id="nombre" name="nombre" placeholder="Juan Perez"
+                                minlength="3" maxlength="80" rows="1" required></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email de contacto</label>
+                            <textarea class="form-control" id="email" name="email" placeholder="juan@gmail.com"
+                                maxlength="30" rows="1" required></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="celular" class="form-label">Número de celular del contacto</label>
+                            <textarea class="form-control" id="celular" name="celular" placeholder="+569 1234 5678"
+                                maxlength="15" rows="1"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="button" id="envio" class="btn btn-outline-success">Agregar pedido</button>
+                        </div>
+                        <div id="liveAlertPlaceholder" class="col-md-12"></div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
-    <script src="../js/validator-agregar-pedido.js"></script>
-    <script src="../js/selectRegionComuna.js"></script>
-</body>
+    </div>
+</section>
+{% endblock %}
 
-</html>
+{% block javascript %}
+<script src="{{ url_for('static', filename = 'js/validator-agregar-pedido.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/selectRegionComuna.js') }}"></script>
+{% endblock %}
