@@ -84,7 +84,7 @@ const validarForm = () => {
     const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
 
     const regresar = () => {
-        window.location.href = "./inicio.html";
+        window.location.href = "/";
     }
 
     const ir = () => {
