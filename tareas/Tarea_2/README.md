@@ -20,3 +20,7 @@
 > source .venv/Scripts/activate
 > flask run
 ```
+6. Para instalar MySQL en el ambiente virtual es necesario ejecutar el siguiente comando en consola:
+```
+> py -m pip install PyMySQL
+```
