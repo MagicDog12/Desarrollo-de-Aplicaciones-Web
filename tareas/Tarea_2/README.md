@@ -24,3 +24,8 @@
 ```
 > py -m pip install PyMySQL
 ```
+7. Para crear la estructura de la base de datos con el archivo adjunto *tarea2.sql* y luego cargar la información de regiones y comunas con el archivo *region-comuna.sql* se deben ejecutar los siguientes comandos en consola:
+```
+> mysql -uroot -p < models\tarea2.sql
+> mysql -uroot -p < models\region-comuna.sql
+```
