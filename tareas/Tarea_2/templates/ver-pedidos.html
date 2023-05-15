@@ -29,43 +29,32 @@ Ver pedidos
                         </tr>
                     </thead>
                     <tbody class="table-light align-middle">
+                        {% if pedidos %}
+                        {% for p in pedidos %}
                         <tr onclick="informacionPedido()">
-                            <td>San Bernardo</td>
-                            <td>Fruta</td>
-                            <td>Tengo hambre</td>
-                            <td>4 unidades</td>
-                            <td>Cristian</td>
+                            <td>{{ p.comuna }}</td>
+                            <td>{{ p.tipo }}</td>
+                            <td>{{ p.descripcion }}</td>
+                            <td>{{ p.cantidad }}</td>
+                            <td>{{ p.nombre_solicitante }}</td>
                         </tr>
-                        <tr onclick="informacionPedido()">
-                            <td>Calera de Tango</td>
-                            <td>Fruta</td>
-                            <td>Soy alergico a las paltas</td>
-                            <td>2 kilos</td>
-                            <td>Andrés</td>
-                        </tr>
-                        <tr onclick="informacionPedido()">
-                            <td>Talagante</td>
-                            <td>Otros</td>
-                            <td>Vegetariano</td>
-                            <td>Mucho</td>
-                            <td>Francisca</td>
-                        </tr>
-                        <tr onclick="informacionPedido()">
-                            <td>Peñaflor</td>
-                            <td>Fruta</td>
-                            <td>Tengo hambre</td>
-                            <td>1 kilo</td>
-                            <td>Diego</td>
-                        </tr>
-                        <tr onclick="informacionPedido()">
-                            <td>Buin</td>
-                            <td>Verdura</td>
-                            <td>Acepto lo que sea</td>
-                            <td>3 unidades</td>
-                            <td>Jorge</td>
-                        </tr>
+                        {% endfor %}
+                        {% endif %}
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                {% if contador > 0 %}
+                {% set contador_anterior = contador - 1 %}
+                <a href="{{ url_for('ver_pedidos', contador = contador_anterior) }}" class="btn btn-outline-info">Página anterior</a>
+                {% set contador_siguiente = contador + 1 %}
+                <a href="{{ url_for('ver_pedidos', contador = contador_siguiente) }}" class="btn btn-outline-info">Página siguiente</a>
+                {% else %}
+                {% set contador_siguiente = contador + 1 %}
+                <a href="{{ url_for('ver_pedidos', contador = contador_siguiente) }}" class="btn btn-outline-info">Página siguiente</a>
+                {% endif %}
             </div>
         </div>
         <div class="row mb-3">

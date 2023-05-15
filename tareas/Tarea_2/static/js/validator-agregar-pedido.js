@@ -88,17 +88,25 @@ const validarForm = () => {
     }
 
     const ir = () => {
-        alertPlaceholder.innerHTML = [
-            `<div class="alert alert-success alert-dismissible" role="alert">`,
-            `   <div>Hemos recibido la información de su pedido. Muchas gracias.</div>`,
-            '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-            '</div>'
-            ].join('');
-            const finalBtn = document.getElementById("envio");
-            finalBtn.classList.remove('btn-outline-success');
-            finalBtn.classList.add('btn-outline-info')
-            finalBtn.innerText = "Volver a la portada";
-            finalBtn.addEventListener("click", regresar);
+        let form = document.querySelector("form");
+        let data = new FormData(form);
+
+        fetch("/agregar-pedido", {
+            method: "POST",
+            body: data
+        }).then(function(response) {
+            alertPlaceholder.innerHTML = [
+                `<div class="alert alert-success alert-dismissible" role="alert">`,
+                `   <div>Hemos recibido la información de su pedido. Muchas gracias.</div>`,
+                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+                ].join('');
+                const finalBtn = document.getElementById("envio");
+                finalBtn.classList.remove('btn-outline-success');
+                finalBtn.classList.add('btn-outline-info')
+                finalBtn.innerText = "Volver a la portada";
+                finalBtn.addEventListener("click", regresar);
+        });
     };
     const appendAlert = (message, type, dismissible) => {
         if(dismissible){
