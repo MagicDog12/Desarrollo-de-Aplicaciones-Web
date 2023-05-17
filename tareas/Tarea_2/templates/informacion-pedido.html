@@ -40,52 +40,42 @@ Informacion Pedido
                 data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
                 <div id="scrollspyHeading1" class="mb-3 text-start">
                     <h3 class="d-inline">Region:</h3>
-                    <p class="d-inline fs-4"> Ñuble</p>
+                    <p class="d-inline fs-4"> {{pedido.region}}</p>
                 </div>
                 <hr>
                 <div id="scrollspyHeading2" class="mb-3 text-start">
                     <h3 class="d-inline">Comuna:</h3>
-                    <p class="d-inline fs-4">Yungay</p>
+                    <p class="d-inline fs-4">{{pedido.comuna}}</p>
                 </div>
                 <hr>
                 <div id="scrollspyHeading3" class=" mb-3 text-start">
                     <h3 class="d-inline">Tipo de pedido:</h3>
-                    <p class="d-inline fs-4">Verduras</p>
+                    <p class="d-inline fs-4">{{pedido.tipo}}</p>
                 </div>
                 <hr>
                 <div id="scrollspyHeading4" class="mb-3 text-start">
                     <h3 class="d-inline">Descripción de pedido:</h3>
-                    <p class="d-inline fs-4">La zanahoria es una hortaliza alargada y cónica, con una piel lisa y
-                        delgada que puede ser de diferentes tonalidades de naranja, amarillo o blanco. Su interior
-                        es de color naranja brillante y tiene una textura crujiente y jugosa.
-
-                        Las zanahorias son ricas en nutrientes importantes para la salud, como la vitamina A, la
-                        vitamina K y la fibra dietética. También contienen otros nutrientes beneficiosos como la
-                        vitamina C, el potasio y el ácido fólico.
-
-                        Las zanahorias se pueden consumir crudas o cocidas, y son una adición popular a las
-                        ensaladas, guisos y sopas. Además, se utilizan a menudo como ingrediente en jugos y batidos
-                        de vegetales debido a sus propiedades nutricionales.</p>
+                    <p class="d-inline fs-4">{{pedido.descripcion}}</p>
                 </div>
                 <hr>
                 <div id="scrollspyHeading5" class="mb-3 text-start">
                     <h3 class="d-inline">Cantidad:</h3>
-                    <p class="d-inline fs-4">3 kilos</p>
+                    <p class="d-inline fs-4">{{pedido.cantidad}}</p>
                 </div>
                 <hr>
                 <div id="scrollspyHeading6" class="mb-3 text-start">
                     <h3 class="d-inline">Nombre del solicitante:</h3>
-                    <p class="d-inline fs-4">Cristian Durán</p>
+                    <p class="d-inline fs-4">{{pedido.nombre_solicitante}}</p>
                 </div>
                 <hr>
                 <div id="scrollspyHeading7" class="mb-3 text-start">
                     <h3 class="d-inline">Email del solicitante:</h3>
-                    <p class="d-inline fs-4">example@gmail.com</p>
+                    <p class="d-inline fs-4">{{pedido.email_solicitante}}</p>
                 </div>
                 <hr>
                 <div id="scrollspyHeading8" class="mb-3 text-start">
                     <h3 class="d-inline">Número celular del solicitante:</h3>
-                    <p class="d-inline fs-4">+56912312345</p>
+                    <p class="d-inline fs-4">{{pedido.celular_solicitante}}</p>
                 </div>
             </div>
         </div>

@@ -1,7 +1,8 @@
 class Pedido:
-    def __init__(self, id, comuna_id, comuna, tipo, descripcion, cantidad, nombre_solicitante, email_solicitante, celular_solicitante):
+    def __init__(self, id, comuna_id, region, comuna, tipo, descripcion, cantidad, nombre_solicitante, email_solicitante, celular_solicitante):
         self.id = id
         self.comuna_id = comuna_id
+        self.region = region
         self.comuna = comuna
         self.tipo = tipo
         self.descripcion = descripcion

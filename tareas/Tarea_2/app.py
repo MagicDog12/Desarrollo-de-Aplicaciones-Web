@@ -51,9 +51,13 @@ def informacion_donacion():
     return render_template("informacion-donacion.html")
 
 # Definimos una ruta para la URL "/informacion-pedido" y devolvemos el contenido de "informacion-pedido.html"
-@app.route("/informacion-pedido")
-def informacion_pedido():
-    return render_template("informacion-pedido.html")
+@app.route("/informacion-pedido/<int:info>")
+def informacion_pedido(info):
+    info = int(request.args.get("info", info))
+    pedido = None
+    c = getConnection()
+    pedido = get_pedido(c, info)
+    return render_template("informacion-pedido.html", pedido = pedido)
 
 # Definir la función de manejo de errores 404
 @app.errorhandler(404)
@@ -80,14 +84,42 @@ def get_pedidos(c, contador):
     listaPedidos = []
     if len(pedidos) > 0:
         for ped in pedidos:
-            sqlAux = "SELECT nombre FROM comuna WHERE id = " + str(ped[1]);
+            sqlAux = "SELECT nombre, region_id FROM comuna WHERE id = " + str(ped[1]);
             cursor = c.cursor()
             cursor.execute(sqlAux)
             c.commit()
-            comuna = cursor.fetchall()[0][0]
-            pedidoNew = Pedido(ped[0], ped[1], comuna, ped[2], ped[3], ped[4], ped[5], ped[6], ped[7])
+            datos = cursor.fetchall()[0]
+            comuna = datos[0]
+            region_id = datos[1]
+            sqlAux2 = "SELECT nombre FROM region WHERE id = " + str(region_id);
+            cursor = c.cursor()
+            cursor.execute(sqlAux2)
+            c.commit()
+            region = cursor.fetchall()[0][0]
+            pedidoNew = Pedido(escape(ped[0]), escape(ped[1]), escape(region), escape(comuna), escape(ped[2]), escape(ped[3]), escape(ped[4]), escape(ped[5]), escape(ped[6]), escape(ped[7]))
             listaPedidos.append(pedidoNew)
     return listaPedidos
+
+def get_pedido(c, info):
+    sql = "SELECT id, comuna_id, tipo, descripcion, cantidad, nombre_solicitante, email_solicitante, celular_solicitante FROM pedido WHERE id =  %s";
+    cursor = c.cursor()
+    cursor.execute(sql, info)
+    c.commit()
+    pedido = cursor.fetchall()[0]
+    sqlAux = "SELECT nombre, region_id FROM comuna WHERE id = " + str(pedido[1]);
+    cursor = c.cursor()
+    cursor.execute(sqlAux)
+    c.commit()
+    datos = cursor.fetchall()[0]
+    comuna = datos[0]
+    region_id = datos[1]
+    sqlAux2 = "SELECT nombre FROM region WHERE id = " + str(region_id);
+    cursor = c.cursor()
+    cursor.execute(sqlAux2)
+    c.commit()
+    region = cursor.fetchall()[0][0]
+    pedidoNew = Pedido(escape(pedido[0]), escape(pedido[1]), escape(region), escape(comuna), escape(pedido[2]), escape(pedido[3]), escape(pedido[4]), escape(pedido[5]), escape(pedido[6]), escape(pedido[7]))
+    return pedidoNew
 
 def agrega_pedido(c, comuna, tipo, descripcion, cantidad, nombre, email, celular):
     if not nombre or not tipo:

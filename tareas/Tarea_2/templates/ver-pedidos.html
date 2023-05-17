@@ -31,12 +31,12 @@ Ver pedidos
                     <tbody class="table-light align-middle">
                         {% if pedidos %}
                         {% for p in pedidos %}
-                        <tr onclick="informacionPedido()">
-                            <td>{{ p.comuna }}</td>
-                            <td>{{ p.tipo }}</td>
-                            <td>{{ p.descripcion }}</td>
-                            <td>{{ p.cantidad }}</td>
-                            <td>{{ p.nombre_solicitante }}</td>
+                        <tr onclick="window.location.href='{{ url_for('informacion_pedido', info=p.id) }}';">
+                            <td> {{ p.comuna }} </td>
+                            <td> {{ p.tipo }} </td>
+                            <td> {{ p.descripcion }} </td>
+                            <td> {{ p.cantidad }} </td>
+                            <td> {{ p.nombre_solicitante }} </td>
                         </tr>
                         {% endfor %}
                         {% endif %}
@@ -48,12 +48,15 @@ Ver pedidos
             <div class="col">
                 {% if contador > 0 %}
                 {% set contador_anterior = contador - 1 %}
-                <a href="{{ url_for('ver_pedidos', contador = contador_anterior) }}" class="btn btn-outline-info">Página anterior</a>
+                <a href="{{ url_for('ver_pedidos', contador = contador_anterior) }}" class="btn btn-outline-info">Página
+                    anterior</a>
                 {% set contador_siguiente = contador + 1 %}
-                <a href="{{ url_for('ver_pedidos', contador = contador_siguiente) }}" class="btn btn-outline-info">Página siguiente</a>
+                <a href="{{ url_for('ver_pedidos', contador = contador_siguiente) }}"
+                    class="btn btn-outline-info">Página siguiente</a>
                 {% else %}
                 {% set contador_siguiente = contador + 1 %}
-                <a href="{{ url_for('ver_pedidos', contador = contador_siguiente) }}" class="btn btn-outline-info">Página siguiente</a>
+                <a href="{{ url_for('ver_pedidos', contador = contador_siguiente) }}"
+                    class="btn btn-outline-info">Página siguiente</a>
                 {% endif %}
             </div>
         </div>
