@@ -30,48 +30,36 @@ Ver donaciones
                         </tr>
                     </thead>
                     <tbody class="table-light align-middle">
-                        <tr onclick="informacionDonacion()">
-                            <td>San Bernardo</td>
-                            <td>Fruta</td>
-                            <td>4 unidades</td>
-                            <td>Hoy</td>
-                            <td>Cristian</td>
-                            <td><img src="{{ url_for('static', filename='img/naranja.png') }}" alt="Naranja" class="foto"></td>
+                        {% if donaciones %}
+                        {% for d in donaciones %}
+                        <tr onclick="window.location.href='{{ url_for('informacion_donacion', info=d.id) }}';">
+                            <td> {{ d.comuna }} </td>
+                            <td> {{ d.tipo }} </td>
+                            <td> {{ d.cantidad }} </td>
+                            <td> {{ d.fecha_disponibilidad }} </td>
+                            <td> {{ d.nombre}} </td>
+                            <td><img src="{{ url_for('static', filename= d.ruta[0]) }}" alt="{{d.ruta[0]}}" class="foto"></td>
                         </tr>
-                        <tr onclick="informacionDonacion()">
-                            <td>Calera de Tango</td>
-                            <td>Fruta</td>
-                            <td>2 kilos</td>
-                            <td>Mañana</td>
-                            <td>Andrés</td>
-                            <td><img src="{{ url_for('static', filename='img/palta.png') }}" alt="palta" class="foto"></td>
-                        </tr>
-                        <tr onclick="informacionDonacion()">
-                            <td>Talagante</td>
-                            <td>Otros</td>
-                            <td>Mucho</td>
-                            <td>10/04/2023</td>
-                            <td>Francisca</td>
-                            <td><img src="{{ url_for('static', filename='img/favicon.png') }}" alt="girasol" class="foto"></td>
-                        </tr>
-                        <tr onclick="informacionDonacion()">
-                            <td>Peñaflor</td>
-                            <td>Fruta</td>
-                            <td>1 kilo</td>
-                            <td>23/04/2023</td>
-                            <td>Diego</td>
-                            <td><img src="{{ url_for('static', filename='img/arandanos.png') }}" alt="arandanos" class="foto"></td>
-                        </tr>
-                        <tr onclick="informacionDonacion()">
-                            <td>Buin</td>
-                            <td>Verdura</td>
-                            <td>3 unidades</td>
-                            <td>15/04/2023</td>
-                            <td>Jorge</td>
-                            <td><img src="{{ url_for('static', filename='img/dona.png') }}" alt="piña" class="foto"></td>
-                        </tr>
+                        {% endfor %}
+                        {% endif %}
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                {% if contador > 0 %}
+                {% set contador_anterior = contador - 1 %}
+                <a href="{{ url_for('ver_donaciones', contador = contador_anterior) }}" class="btn btn-outline-info">Página
+                    anterior</a>
+                {% set contador_siguiente = contador + 1 %}
+                <a href="{{ url_for('ver_donaciones', contador = contador_siguiente) }}"
+                    class="btn btn-outline-info">Página siguiente</a>
+                {% else %}
+                {% set contador_siguiente = contador + 1 %}
+                <a href="{{ url_for('ver_donaciones', contador = contador_siguiente) }}"
+                    class="btn btn-outline-info">Página siguiente</a>
+                {% endif %}
             </div>
         </div>
         <div class="row mb-3">
